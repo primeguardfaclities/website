@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PrimeGuard Facilities | Elite Security & Facility Solutions</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PrimeGuard Facilities | Elite Security</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- Navbar -->
 <header class="navbar">
   <div class="container">
-    <div class="logo">PrimeGuard Facilities</div>
-    <button class="nav-toggle" aria-label="Toggle Navigation">
-      <span class="hamburger"></span>
-    </button>
+    <div class="logo">PrimeGuard</div>
+    <button class="nav-toggle"><span class="hamburger"></span></button>
     <nav class="nav-menu">
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#solutions">Solutions</a></li>
         <li><a href="#industries">Industries</a></li>
+        <li><a href="#stats">Stats</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -26,104 +26,120 @@
   </div>
 </header>
 
-<main>
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Elite Security & Facility Management</h1>
-      <p>Protecting your assets with precision, trust, and technology.</p>
-      <a href="#contact" class="btn-primary">Get in Touch</a>
+<!-- Hero Section with Parallax -->
+<section id="home" class="hero">
+  <div class="hero-bg">
+<video class="hero-video" autoplay muted loop>
+    <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+  </video>
+
+  </div>
+  <div class="hero-content">
+    <h1>Elite Security & Facility Management</h1>
+    <p>Protecting your business with precision, technology, and trust.</p>
+    <a href="#contact" class="btn-primary">Get in Touch</a>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="solutions" class="section services fade-in">
+  <h2>Our Services</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="icon">🛡️</div>
+      <h3>Physical Security</h3>
+      <p>Professional guards trained for corporate and residential protection.</p>
     </div>
-  </section>
-
-  <!-- Solutions -->
-  <section id="solutions" class="section solutions fade-in">
-    <h2>Our Services</h2>
-    <div class="solutions-grid">
-      <div class="card">
-        <h3>Physical Security</h3>
-        <p>Professional guards trained for corporate and residential protection.</p>
-      </div>
-      <div class="card">
-        <h3>Tech-Enabled Security</h3>
-        <p>24/7 surveillance, monitoring, access control, and alarms.</p>
-      </div>
-      <div class="card">
-        <h3>Facility Management</h3>
-        <p>Maintenance, cleaning, and support services for corporate spaces.</p>
-      </div>
-      <div class="card">
-        <h3>Risk & Crisis Response</h3>
-        <p>Emergency planning and rapid-response teams for your business.</p>
-      </div>
+    <div class="service-card">
+      <div class="icon">📹</div>
+      <h3>Tech-Enabled Security</h3>
+      <p>24/7 surveillance, monitoring, access control, and alarms.</p>
     </div>
-  </section>
-
-  <!-- Stats -->
-  <section class="section stats fade-in">
-    <div class="stats-grid">
-      <div class="stat">
-        <h3 class="count" data-target="35">0</h3>
-        <p>Years Experience</p>
-      </div>
-      <div class="stat">
-        <h3 class="count" data-target="5000">0</h3>
-        <p>Clients Served</p>
-      </div>
-      <div class="stat">
-        <h3 class="count" data-target="15000">0</h3>
-        <p>Personnel</p>
-      </div>
+    <div class="service-card">
+      <div class="icon">🏢</div>
+      <h3>Facility Management</h3>
+      <p>Maintenance, cleaning, and support services for corporate spaces.</p>
     </div>
-  </section>
+    <div class="service-card">
+      <div class="icon">⚡</div>
+      <h3>Risk & Crisis Response</h3>
+      <p>Emergency planning and rapid-response teams for your business.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- Industries -->
-  <section id="industries" class="section industries fade-in">
-    <h2>Industries We Serve</h2>
-    <ul>
-      <li>Corporate & Offices</li>
-      <li>Banking & Finance</li>
-      <li>Industrial & Manufacturing</li>
-      <li>Healthcare & Hospitality</li>
-      <li>Retail & Warehousing</li>
-    </ul>
-  </section>
+<!-- Stats with Animated Progress Bars -->
+<section id="stats" class="section stats fade-in">
+  <h2>Our Impact</h2>
+  <div class="stats-grid">
+    <div class="stat">
+      <h3 class="count" data-target="35">0</h3>
+      <p>Years Experience</p>
+      <div class="progress"><div class="progress-bar" data-progress="90%"></div></div>
+    </div>
+    <div class="stat">
+      <h3 class="count" data-target="5000">0</h3>
+      <p>Clients Served</p>
+      <div class="progress"><div class="progress-bar" data-progress="95%"></div></div>
+    </div>
+    <div class="stat">
+      <h3 class="count" data-target="15000">0</h3>
+      <p>Personnel</p>
+      <div class="progress"><div class="progress-bar" data-progress="85%"></div></div>
+    </div>
+  </div>
+</section>
 
-  <!-- Testimonials -->
-  <section id="testimonials" class="section testimonials fade-in">
-    <h2>Client Testimonials</h2>
-    <div class="testimonial">
+<!-- Industries -->
+<section id="industries" class="section industries fade-in">
+  <h2>Industries We Serve</h2>
+  <div class="industries-grid">
+    <div class="industry-card">Corporate & Offices</div>
+    <div class="industry-card">Banking & Finance</div>
+    <div class="industry-card">Industrial & Manufacturing</div>
+    <div class="industry-card">Healthcare & Hospitality</div>
+    <div class="industry-card">Retail & Warehousing</div>
+  </div>
+</section>
+
+<!-- Testimonials Slider -->
+<section id="testimonials" class="section testimonials fade-in">
+  <h2>What Our Clients Say</h2>
+  <div class="testimonial-carousel">
+    <div class="testimonial-card active">
       <p>"PrimeGuard’s team is professional, responsive, and highly reliable."</p>
       <span>— CEO, Global Corp</span>
     </div>
-    <div class="testimonial">
+    <div class="testimonial-card">
       <p>"Modern technology and expert personnel — we feel fully secure."</p>
       <span>— Director, Finance House</span>
     </div>
-  </section>
+    <div class="testimonial-card">
+      <p>"Exceptional service and fast response times. Highly recommended."</p>
+      <span>— Manager, Manufacturing Unit</span>
+    </div>
+  </div>
+</section>
 
-  <!-- Contact -->
-  <section id="contact" class="section contact fade-in">
-    <h2>Contact Us</h2>
-    <form>
-      <div class="form-group">
-        <input type="text" id="name" placeholder=" " required>
-        <label for="name">Your Name</label>
-      </div>
-      <div class="form-group">
-        <input type="email" id="email" placeholder=" " required>
-        <label for="email">Email Address</label>
-      </div>
-      <div class="form-group">
-        <textarea id="message" placeholder=" " rows="4"></textarea>
-        <label for="message">Your Message</label>
-      </div>
-      <button type="submit" class="btn-primary">Send Message</button>
-    </form>
-  </section>
-
-</main>
+<!-- Contact Form -->
+<section id="contact" class="section contact fade-in">
+  <h2>Contact Us</h2>
+  <form>
+    <div class="form-group">
+      <input type="text" id="name" placeholder=" " required>
+      <label for="name">Your Name</label>
+    </div>
+    <div class="form-group">
+      <input type="email" id="email" placeholder=" " required>
+      <label for="email">Email Address</label>
+    </div>
+    <div class="form-group">
+      <textarea id="message" placeholder=" " rows="4"></textarea>
+      <label for="message">Your Message</label>
+    </div>
+    <button type="submit" class="btn-primary">Send Message</button>
+  </form>
+</section>
 
 <footer>
   <p>© 2026 PrimeGuard Facilities. All Rights Reserved.</p>
