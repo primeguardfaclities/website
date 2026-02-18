@@ -1,52 +1,39 @@
-// Sticky Navbar Shadow
-const navbar = document.querySelector('.navbar');
-window.addEventListener('scroll', () => {
-  if(window.scrollY > 50) navbar.classList.add('scrolled');
-  else navbar.classList.remove('scrolled');
-});
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.main-nav a');
+const menuToggle = document.querySelector('.menu-toggle');
+const mainNav = document.querySelector('.main-nav');
 
-// Fade-in Sections
-const faders = document.querySelectorAll(".fade-in");
-const appearOptions = { threshold:0.3 };
-const appearOnScroll = new IntersectionObserver((entries, observer)=>{
-  entries.forEach(entry=>{
-    if(!entry.isIntersecting) return;
-    entry.target.classList.add("visible");
-    observer.unobserve(entry.target);
+function setActiveNav() {
+  let current = '';
+  const y = window.scrollY;
+
+  sections.forEach((section) => {
+    const top = section.offsetTop - 140;
+    const height = section.offsetHeight;
+    if (y >= top && y < top + height) {
+      current = section.id;
+    }
   });
-}, appearOptions);
-faders.forEach(fader => appearOnScroll.observe(fader));
 
-// Animated Counters with Progress
-const counters = document.querySelectorAll(".count");
-counters.forEach(counter=>{
-  const progressBar = counter.closest('.stat').querySelector('.progress-bar');
-  counter.innerText='0';
-  const target = +counter.getAttribute('data-target');
-  let current=0;
-  const increment = target/200;
-  const update = ()=>{
-    current += increment;
-    if(current < target){ counter.innerText = Math.ceil(current); requestAnimationFrame(update); }
-    else { counter.innerText = target.toLocaleString(); progressBar.style.width = progressBar.getAttribute('data-progress'); }
-  };
-  update();
-});
-
-// Testimonial Carousel
-let currentTestimonial = 0;
-const testimonials = document.querySelectorAll(".testimonial-card");
-function showTestimonial(index){
-  testimonials.forEach((t,i)=>t.classList.remove('active'));
-  testimonials[index].classList.add('active');
+  navLinks.forEach((link) => {
+    const target = link.getAttribute('href').replace('#', '');
+    link.classList.toggle('active', target === current);
+  });
 }
-showTestimonial(0);
-setInterval(()=>{
-  currentTestimonial = (currentTestimonial+1)%testimonials.length;
-  showTestimonial(currentTestimonial);
-}, 5000);
 
-// Mobile Menu Toggle
-const navToggle = document.querySelector('.nav-toggle');
-const navMenu = document.querySelector('.nav-menu');
-navToggle.addEventListener('click', ()=> navMenu.classList.toggle('open'));
+if (menuToggle && mainNav) {
+  menuToggle.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+window.addEventListener('scroll', setActiveNav);
+window.addEventListener('load', setActiveNav);
